@@ -182,6 +182,21 @@ Hint: use `MARGIN = 1:2` to apply the function to each value instead of only a r
 
 ```{r}
 
+round_q3 <- function(x) {
+  if (x < 100){ #if it has 2 digits
+    round(x, -1) # round to tens
+  } else if (x < 1000) { #if it has 3 digits
+    round(x, -2) #round to hundreds
+  } else { #if it has 4 digits
+    round(x, -3) #round to thousands
+  }
+}
+
+mat_round <- apply(mat_rand, MARGIN = 1:2, round_q3)
+
+print(mat_rand)
+print(mat_round)
+  
 ```
 
 
@@ -205,6 +220,8 @@ max_temps <- read_tsv("state_max_temps.tsv") |>
 Calculate the average temperature for each month across the whole data frame (using the data for all three states together).
 
 ```{r}
+
+
 
 ```
 
