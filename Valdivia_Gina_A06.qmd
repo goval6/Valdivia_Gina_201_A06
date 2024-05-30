@@ -56,7 +56,7 @@ To get full credit for this Question you must:
 
 ## Screenshot/image of RStudio
 
-![](filepath.png)
+![](/Users/ginavaldivia/Library/Messages/Attachments/fe/14/E1CBC39E-6CC0-450E-83D0-0FE2760B84E1/Image 5-29-24 at 8.01 PM.jpg)
 
 :::
 
