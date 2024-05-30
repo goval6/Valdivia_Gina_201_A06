@@ -240,7 +240,6 @@ No need to print any output here.
 co_data <- max_temps[max_temps$state == "CO",]
 oh_data <- max_temps[max_temps$state == "OH",]
 va_data <- max_temps[max_temps$state == "VA",]
-
 ```
 
 
@@ -262,6 +261,11 @@ Note: This code should still run successfully even if the numbers were to change
 
 ```{r}
 
+co_temps<- co_data[, -1:-2]
+co_median <- apply(co_temps, 1, median)
+max_med <- which.max(co_median)
+min_med <- which.min(co_median)
+paste0("The maximum median annual temperature of ", co_median[max_med], " occured in ", co_data$year[max_med], " and the minimum median annual temperature of ", co_median[min_med], " occured in ", co_data$year[min_med], ".")
 
 
 ```
