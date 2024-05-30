@@ -220,7 +220,7 @@ max_temps <- read_tsv("state_max_temps.tsv") |>
 Calculate the average temperature for each month across the whole data frame (using the data for all three states together).
 
 ```{r}
-state_summary <- apply(temp_cols, 2, mean)
+state_summary <- apply(max_temps[, -1:-2], 2, mean) #got rid of the year and the state columns to apply
 print(state_summary)
 
 ```
@@ -237,6 +237,9 @@ Create three new data frames by slicing the data by state.
 No need to print any output here.
 
 ```{r}
+co_data <- max_temps[max_temps$state == "CO",]
+oh_data <- max_temps[max_temps$state == "OH",]
+va_data <- max_temps[max_temps$state == "VA",]
 
 ```
 
@@ -259,6 +262,8 @@ Note: This code should still run successfully even if the numbers were to change
 
 ```{r}
 
+
+
 ```
 
 
@@ -271,6 +276,16 @@ Example: The number 312 would return 6 (3 + 1 + 2)
 Run your function with 935068.
 
 ```{r}
+
+sum_of_digits <- function(n) {
+  if (n < 10) {
+    return(n)  # if the number has only one digit, return the number 
+  } else {
+    return(n %% 10 + sum_of_digits(n %/% 10))  #add the last digit to the sum of the rest of the digits
+  }
+}
+
+sum_of_digits(935068)
 
 ```
 
